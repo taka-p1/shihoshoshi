@@ -9,7 +9,7 @@ def main():
         df = r.make_shihoshoshi_df(conf['web']['SHIHOSHOSHI_URL'])
         r.export_file(df, conf['general']['FILE_NAME'])
     finally:
-        r.quit_driver()
+        r.driver.quit()
 
 if __name__ == "__main__":
     main()

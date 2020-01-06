@@ -1,8 +1,8 @@
-from selenium import webdriver
+from datetime import datetime
 import math
+from selenium import webdriver
 import pandas as pd
 import numpy as np
-from datetime import datetime
 import logging
 
 logging.basicConfig(filename='shihoshoshi.log', level=logging.INFO)
@@ -62,6 +62,7 @@ class Robot(object):
         df = df.assign(No = df.No.astype(np.int64))
         return df
 
+
     def export_file(self, df, filename):
         now = datetime.now()
         filename = f'{filename}_{now:%Y%m%d}.csv'
@@ -77,9 +78,6 @@ class Robot(object):
             'status':'success',
             'filename':filename
         })
-
-    def quit_driver(self):
-        self.driver.quit()
 
 if __name__ == "__main__":
     Robot(None)
