@@ -105,5 +105,6 @@ venv.bak/
 
 #out put file
 *.csv
-
 .vscode
+
+config.ini
